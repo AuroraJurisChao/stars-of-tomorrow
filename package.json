@@ -1,7 +1,7 @@
 {
   "name": "stars-of-tomorrow",
   "private": true,
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A full-stack team appreciation and live event game platform",
   "license": "MIT",
   "type": "module",
