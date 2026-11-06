@@ -14,7 +14,9 @@ jobs:
         with:
           node-version: 22
           cache: npm
+      - run: npm install --global npm@11.12.1
       - run: npm ci
       - run: npm run check
       - run: npm test
       - run: npm run build
+      - run: docker build -t stars-of-tomorrow:ci .

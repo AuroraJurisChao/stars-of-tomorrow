@@ -2,7 +2,8 @@ FROM node:22-alpine AS build
 WORKDIR /app
 
 COPY package.json package-lock.json ./
-RUN npm ci --registry=https://registry.npmjs.org --replace-registry-host=always
+RUN npm install --global npm@11.12.1 \
+    && npm ci --registry=https://registry.npmjs.org --replace-registry-host=always
 
 COPY . .
 RUN npm run build

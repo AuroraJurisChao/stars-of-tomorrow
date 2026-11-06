@@ -142,7 +142,7 @@ npm test
 npm run build
 ```
 
-GitHub Actions会对 `main` 分支和Pull Request执行相同检查。数据库与浏览器端到端验证仍应在目标部署环境完成；构建成功不等于现场活动已经验收。
+GitHub Actions会对 `main` 分支和Pull Request执行相同检查，并实际构建Docker镜像。数据库与浏览器端到端验证仍应在目标部署环境完成；构建成功不等于现场活动已经验收。
 
 ## 许可与贡献
 
