@@ -1,0 +1,23 @@
+{
+	email {$ACME_EMAIL}
+}
+
+{$DOMAIN} {
+	encode zstd gzip
+	reverse_proxy 127.0.0.1:{$APP_PORT:3000}
+	header {
+		-Server
+		X-Content-Type-Options nosniff
+		Referrer-Policy strict-origin-when-cross-origin
+		X-Frame-Options DENY
+	}
+	log {
+		output stdout
+		format filter {
+			wrap console
+			fields {
+				request>headers>Cookie delete
+			}
+		}
+	}
+}
